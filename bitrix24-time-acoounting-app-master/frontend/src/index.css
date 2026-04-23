@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+/* ── Маковские скроллбары ── */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.18) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 100px;
+  transition: background 0.2s;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.32);
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* ── Плавный скролл ── */
+* {
+  scroll-behavior: smooth;
+}
+
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes logo-gradient {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+body {
+  line-height: 1.5;
+  background: linear-gradient(
+    135deg,
+    #dce8f5 0%,
+    #ede4f8 25%,
+    #e2f0eb 50%,
+    #f5dce8 75%,
+    #dce8f5 100%
+  );
+  background-size: 300% 300%;
+  animation: gradient-shift 18s ease infinite;
+}
